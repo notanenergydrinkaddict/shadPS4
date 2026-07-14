@@ -197,7 +197,7 @@ jobs:
     - name: Cache CMake Configuration
       uses: actions/cache@v5
       env:
-          cache-name: ${{ runner.os }}-sdl-ninja-cache-cmake-configuration
+          cache-name: ${{ runner.os }}-sdl-vs-cache-cmake-configuration
       with:
           path: |
             ${{github.workspace}}/build
@@ -208,7 +208,7 @@ jobs:
     - name: Cache CMake Build
       uses: hendrikmuhs/ccache-action@v1.2.21
       env:
-          cache-name: ${{ runner.os }}-sdl-cache-cmake-build
+          cache-name: ${{ runner.os }}-vs-sdl-cache-cmake-build
       with:
         append-timestamp: false
         key: ${{ env.cache-name }}-${{ hashFiles('**/CMakeLists.txt', 'cmake/**') }}
